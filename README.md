@@ -2,4 +2,4 @@
 
 Check out my poem: [View Poem](poem.html)
 
-Check out my narrative story! [View Story](https://xhrya.github.io/2024-net_art/narrative/index.html)
+Check out my hypertext narrative story! [View Story](https://xhrya.github.io/2024-net_art/hypertext/index.html)

@@ -1,0 +1,31 @@
+p {
+}
+
+body {
+  background-color: pink;
+  font-family: "Ariel, Helvetica, sens-serif";
+  text-align: center;
+}
+
+h1 {
+  font-style: italic;
+  padding-top: 10px;
+}
+
+.title {
+  font-weight: bold;
+}
+
+#theend {
+  color: red;
+}
+
+p {
+  font-size: 45px;
+}
+
+div {
+  padding: 50px;
+  margin: 80px;
+  border: 10px solid;
+}

@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.left {
+  margin-top: 10px;
+  float: left;
+}
+
+.right {
+  margin-top: 10px;
+  float: right;
+}
+
+.circle {
+  height: 25px;
+  width: 25px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.circle2 {
+  height: 50px;
+  width: 50px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.circle1 {
+  height: 20px;
+  width: 20px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.eyes {
+  position: absolute;
+  margin-left: 80%;
+  margin-top: 10px;
+}
+
+.eyes1 {
+  position: absolute;
+  margin-left: 50%;
+  background-color: black;
+}
+.eyes2 {
+  position: absolute;
+  margin-left: 80%;
+  margin-top: 10px;
+  padding-right: 100px;
+  background-color: black;
+}
+.face {
+  height: 400px;
+  width: 400px;
+  background-color: papayawhip;
+  border-radius: 50%;
+  float: right;
+}
+
+.body {
+  z-index: -100;
+  position: absolute;
+  height: 500px;
+  width: 1000px;
+  background-color: pink;
+  border-radius: 50%;
+  float: right;
+}
+.eyes2 {
+  position: absolute;
+  height: 100px;
+  width: 30px;
+  background-color: black;
+  border-radius: 50%;
+  display: inline-block;
+}
+.rectangle1 {
+  background-color: powderblue;
+  width: 200px;
+  height: 10px;
+}
+
+.rectangle2 {
+  background-color: plum;
+  width: 200px;
+  height: 20px;
+}
+
+.rectangle3 {
+  background-color: palegreen;
+  width: 200px;
+  height: 30px;
+}
+
+.box1 {
+  background-color: pink;
+}
+.box2 {
+  background-color: seagreen;
+}
+
+.box3 {
+  background-color: darkgreen;
+}

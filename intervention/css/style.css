@@ -23,7 +23,36 @@ body {
   color: #333;
 }
 
-.content img {
-  max-width: 100%;
+/* image s {
+  max-width: 90%;
   border-radius: 8px;
+  padding: auto;
+  border-color: pink;
+  border-radius: 10%;
+} */
+
+img {
+  max-width: 90%;
+  border-radius: 8px;
+  padding: auto;
+  background-color: pink;
+  border: 4px solid pink;
+}
+.container {
+  display: flex;
+}
+
+.content {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.image-container {
+  width: 30%;
+  padding: auto;
+}
+
+h1 {
+  text-align: center;
+  font-weight: bold;
 }

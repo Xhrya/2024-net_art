@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Net Art Showcase</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+    />
+
+    <style>
+      body,
+      html {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        font-family: Arial, sans-serif;
+        transition: background-color 0.5s ease;
+      }
+      header {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+        position: relative;
+      }
+      .slider {
+        max-width: 900px;
+        margin: 20px auto;
+        color: black;
+      }
+      .slider img {
+        width: 99%;
+        margin-bottom: 10px;
+        display: block;
+        height: 500px;
+        object-fit: cover;
+      }
+      .slick-prev,
+      .slick-next {
+        font-size: 0px;
+        color: red;
+        z-index: 75;
+      }
+      .slick-prev:before,
+      .slick-next:before {
+        font-family: "slick";
+        padding: 10px;
+        color: red;
+        font-size: 50px;
+        line-height: 1;
+        opacity: 0.75;
+      }
+      .artwork-title {
+        position: absolute;
+        color: white;
+        font-size: 24px;
+        padding: 10px;
+        background-color: #ff0000;
+        cursor: pointer;
+        animation: flickerAnimation 1s infinite;
+        box-shadow: 0 0 5px #ff0000;
+      }
+      @keyframes flickerAnimation {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.5;
+        }
+      }
+      .ping_image img {
+        width: 500px;
+        height: 500px;
+        border-radius: 50%;
+        object-fit: cover;
+        animation: rotate 10s linear infinite;
+      }
+      .back-button {
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #ff0000;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+      }
+      footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
+      #modal {
+        display: none;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 100;
+        text-align: center;
+        padding-top: 100px;
+        color: white;
+        font-size: 24px;
+      }
+      .modal-content {
+        display: inline-block;
+        background: #333;
+        padding: 20px;
+        border-radius: 5px;
+      }
+      .modal-button {
+        padding: 10px 20px;
+        margin: 20px;
+        cursor: pointer;
+        color: white;
+        background-color: red;
+        border: none;
+        border-radius: 5px;
+      }
+      .rotate {
+        animation: rotate 10s linear infinite;
+      }
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Socket-to-Socket</h1>
+      <a href="info.html" class="back-button">Back to Home</a>
+    </header>
+
+    <div class="slider">
+      <div>
+        <img src="img/the_thing.png" alt="The Thing by Wolfgang Staehle" />
+        <p
+          class="artwork-title"
+          data-title="The Thing by Wolfgang Staehle"
+          data-url="http://www.medienkunstnetz.de/works/the-thing/"
+        ></p>
+      </div>
+      <div>
+        <img
+          src="img/conversation_map.png"
+          alt="Conversation Map by Warren Sack"
+        />
+        <p
+          class="artwork-title"
+          data-title="Conversation Map by Warren Sack"
+          data-url="http://www.medienkunstnetz.de/works/conversation-map/"
+        ></p>
+      </div>
+      <div class="ping_image">
+        <img
+          src="img/ping.png"
+          alt=".ping Project by Umstätter, Antya; Meschkat, Steffen; Schmidt, Axel"
+          class="rotate"
+          style="height: 500px"
+        />
+
+        <p
+          class="artwork-title"
+          data-title=".ping Project by Umstätter, Antya; Meschkat, Steffen; Schmidt, Axel"
+          data-url="http://www.medienkunstnetz.de/works/ping/"
+        ></p>
+      </div>
+      <div>
+        <img
+          src="img/port.png"
+          alt="ART DIRT IM-PORT by G.H. Hovagimyan and guests"
+        />
+        <p
+          class="artwork-title"
+          data-title="ART DIRT IM-PORT by G.H. Hovagimyan and guests"
+          data-url="https://www.artnetweb.com/port/grabs/artdirt_screens.html"
+        ></p>
+      </div>
+    </div>
+
+    <div id="modal">
+      <div class="modal-content">
+        WARNING: WILL REDIRECT TO DIFFERENT WEBSITE.
+        <button class="modal-button" id="goDangerZone">Go Danger Zone</button>
+        <button class="modal-button" id="quit">Quit</button>
+      </div>
+    </div>
+
+    <footer>Information overload</footer>
+
+    <!-- Slick Carousel JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $(".slider").slick({
+          dots: true,
+          infinite: true,
+          speed: 500,
+          fade: true,
+          cssEase: "linear",
+          adaptiveHeight: true,
+        });
+
+        function positionTitles() {
+          $(".artwork-title").each(function () {
+            var $title = $(this);
+            var newTop = Math.random() * (80 - 5) + 5;
+            var newLeft = Math.random() * (80 - 5) + 5;
+            $title
+              .css({
+                top: newTop + "%",
+                left: newLeft + "%",
+              })
+              .text($title.attr("data-title"));
+          });
+        }
+
+        positionTitles();
+
+        $(".slider").on("afterChange", function (event, slick, currentSlide) {
+          positionTitles();
+          var colors = ["#ff9999", "#99ff99", "#9999ff", "#ff99ff"];
+          $("body").css(
+            "background-color",
+            colors[currentSlide % colors.length]
+          );
+        });
+
+        $(".artwork-title").on("click", function () {
+          var url = $(this).data("url");
+          $("#modal").show();
+
+          $("#goDangerZone")
+            .off("click")
+            .on("click", function () {
+              window.location.href = url;
+            });
+
+          $("#quit").on("click", function () {
+            $("#modal").hide();
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

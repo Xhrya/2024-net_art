@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Net Art Showcase</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body,
+      html {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        overflow: hidden;
+      }
+
+      header {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+        position: relative;
+      }
+
+      header h1 {
+        margin: 0;
+      }
+      header p {
+        margin-top: 5px;
+        font-size: 18px;
+      }
+      .text-container {
+        position: absolute;
+        /* transform: translate(-50%, -50%); */
+        max-width: 70%;
+        padding: 20px;
+        z-index: 2;
+      }
+      .text {
+        font-size: 16px;
+        line-height: 1.5;
+      }
+      .background-animation {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        overflow: hidden;
+      }
+      .circle {
+        position: absolute;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.2);
+        animation: pulse 6s infinite cubic-bezier(0.32, 0.04, 0.15, 0.93) both;
+      }
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(0);
+          opacity: 0;
+        }
+        50% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+      footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
+      #redirect-message {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 20px;
+        border-radius: 10px;
+        z-index: 3;
+        display: none;
+      }
+      #countdown {
+        font-size: 48px;
+        color: red;
+      }
+      .flicker {
+        animation: flicker 0.5s infinite alternate;
+      }
+      @keyframes flicker {
+        from {
+          opacity: 1;
+        }
+        to {
+          opacity: 0.5;
+        }
+      }
+      .electricity {
+        position: relative;
+        overflow: hidden;
+      }
+      .spark {
+        position: absolute;
+        width: 2px;
+        height: 2px;
+        background-color: #ffcc00;
+        opacity: 0.8;
+        animation: electricitySpark 0.5s infinite alternate;
+      }
+      @keyframes electricitySpark {
+        0% {
+          transform: translateY(0) rotateZ(45deg);
+        }
+        100% {
+          transform: translateY(-20px) rotateZ(45deg);
+        }
+      }
+      .darken {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 4;
+        display: none;
+      }
+      .error-message {
+        position: absolute;
+        font-size: 24px;
+        color: red;
+        z-index: 5;
+        display: none;
+      }
+      .content {
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        margin: 20px;
+      }
+
+      .content p {
+        margin-bottom: 15px;
+      }
+
+      .content p:last-child {
+        margin-bottom: 0;
+      }
+      content {
+        padding-top: 20px;
+        padding-left: 20px; /* Adjust the padding value as needed */
+        padding-right: 20px; /* Adjust the padding value as needed */
+
+        height: 600px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Socket-to-Socket</h1>
+      <p>Curated by Shreya Pandey</p>
+    </header>
+    <div class="text-container"></div>
+    <div class="content">
+      <div id="text">
+        <p>
+          The works that I have chosen to include in this exhibition are "The
+          Thing" by Wolfgang Staehle, "Conversation Map" by Warren Sack, "ART
+          DIRT IM-PORT" by G.H. Hovagimyan and guests, and ".ping Project" by
+          Umstätter, Antya; Meschkat, Steffen; Schmidt, Axel.
+        </p>
+
+        <p>
+          All these works engage with the way information is organized online,
+          which often manifests in information overload. For example, "The
+          Conversation Map" visualizes the usage of the internet—visitors can
+          see the relationships between messages and their results and the
+          overwhelming amount of lines connecting the different conversations.
+        </p>
+
+        <p>
+          The ".ping project" digs deeper into the visible structure of the
+          network connection. I find it interesting that the interactive map of
+          the World Wide Web, as shown through the visual camera in this ".ping"
+          computer program, again shows a series of lines that are
+          interconnected in a weblike way that’s hard to untangle. The lines
+          comprising the web highlights the internet's interactivity and the
+          mass amount of data it contains.
+        </p>
+
+        <p>
+          The other two works in this exhibition invite visitors to reflect on
+          how conversations and data are added to and organized on the web. "The
+          Thing" furthered the realm of data nets and communications; these
+          conversations and strings contributed to the web as seen in the
+          ".ping", and "Conversation Map".
+        </p>
+
+        <p>
+          The final artwork that I decided to include, "ARTDIRT IM-PORT," is an
+          ironic representation of the bundled strings seen in the other two
+          artworks. The first two pieces in this exhibition showcase an
+          overcrowded ball of information, but in this work, visitors see a chat
+          window that shows a two-way conversation between port1 and port2.
+          Within the confines of their physical spaces, these two are lonely, as
+          shown through the various screenshots - covering their bodies with a
+          blanket and isolating themselves in front of the computer, or lying on
+          the floor with their faces veiled - giving off the feeling of
+          isolation. Despite this, the content of their conversation reflects
+          the mass amount of information available through the internet: “more
+          movies…”, and overall, lots of data.
+        </p>
+
+        <p>
+          All these works engage with themes of interconnectedness and the
+          excessive amount of information on the web. They invite questions:
+          What does it mean to have access to so much data? What are the
+          implications of having personal information accessible to others
+          online? And how do we visually make sense of this system?
+        </p>
+      </div>
+    </div>
+    <div id="redirect-message">
+      <p id="redirect-text">UNEXPECTED CONNECTED ERROR: REDIRECTING ...</p>
+      <div id="countdown"></div>
+    </div>
+
+    <div class="background-animation"></div>
+    <div class="darken"></div>
+
+    <footer>Information overload</footer>
+
+    <script>
+      $(document).ready(function () {
+        // Grow box animation
+        $(".text-container").animate(
+          {
+            // width: "100%",
+            // height: "100vh",
+            // top: "0",
+            // left: "0",
+            // transform: "translate(0)",
+          },
+          5000
+        );
+
+        setTimeout(function () {
+          for (let i = 0; i < 100; i++) {
+            let posX = Math.random() * 100;
+            let posY = Math.random() * 100;
+            let flickerDelay = Math.random() * 5000 + 2000;
+
+            let errorMessage = $(
+              "<div class='error-message'>UNEXPECTED CONNECTED ERROR: REDIRECTING ...</div>"
+            );
+            errorMessage.css({ left: posX + "%", top: posY + "%" });
+            $(".background-animation").append(errorMessage);
+
+            errorMessage.hide().fadeIn().delay(flickerDelay).fadeOut();
+          }
+        }, 5000);
+
+        setTimeout(function () {
+          $(".darken").show();
+          $("body").css("background-color", "black");
+          let flickerTimes = [100, 200, 300, 400, 500, 600];
+          flickerTimes.forEach(function (delay, index) {
+            setTimeout(function () {
+              $("body").css(
+                "background-color",
+                index % 2 === 0 ? "white" : "black"
+              );
+            }, delay);
+          });
+
+          $("#redirect-message").show();
+
+          setTimeout(function () {
+            $("#redirect-text").html(
+              "UNEXPECTED CONNECTED ERROR: REDIRECTING ..."
+            );
+          }, 5000);
+
+          setTimeout(function () {
+            $("#countdown").html("3");
+          }, 5500);
+
+          setTimeout(function () {
+            $("#countdown").html("2");
+          }, 7000);
+
+          setTimeout(function () {
+            $("#countdown").html("1");
+          }, 8000);
+
+          setTimeout(function () {
+            window.location.href = "slideshow.html";
+          }, 9000);
+        }, 5000);
+      });
+    </script>
+  </body>
+</html>

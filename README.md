@@ -1,4 +1,4 @@
-# 2024-net_art
+# Net Art!
 
 Check out my poem: [View Poem](poem.html)
 
